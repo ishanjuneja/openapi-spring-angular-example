@@ -1,0 +1,7 @@
+<div *ngFor="let employee of $employees | async">
+  <div style="display: flex;flex-direction:column">
+    <h1>Name : {{employee.name}}</h1>
+    <span>ID : {{employee.id}}</span>
+    <h5>Email : {{employee.email}}</h5>
+  </div>
+</div>
