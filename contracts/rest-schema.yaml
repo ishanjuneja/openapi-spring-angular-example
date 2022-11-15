@@ -1,0 +1,41 @@
+openapi: '3.0.0'
+servers:
+  - url: http://localhost:8080/api
+info:
+  version: 1.0.0
+  title: Demo API
+paths:
+  /employee:
+    summary: Get list of all employees
+    get:
+      tags:
+        - Employees
+      summary: Get list of employees
+      operationId: getEmployees
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeList'
+
+components:
+  schemas:
+    EmployeeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Employee'
+    Employee:
+      required:
+        - id
+        - name
+        - email
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        email:
+          type: string
