@@ -43,8 +43,25 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.openapispringangular.backend.BackendApplication</mainClass>
+                </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <from>
+                        <image>amazoncorretto:17</image>
+                    </from>
+                    <to>
+                        <image>spring-openapi-repo/${project.artifactId}:${project.version}</image>
+                        <image>237014687191.dkr.ecr.ap-south-1.amazonaws.com/spring-openapi-repo/${project.artifactId}:${project.version}</image>
 
+                    </to>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
